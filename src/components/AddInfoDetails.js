@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 export const AddInfoDetails = ({ movieId }) => {
   return (
@@ -10,4 +11,7 @@ export const AddInfoDetails = ({ movieId }) => {
       </li>
     </ul>
   );
+};
+AddInfoDetails.propTypes = {
+  movieId: PropTypes.number,
 };

@@ -1,19 +1,8 @@
-import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+
 import { Link } from 'react-router-dom';
 
-import { fetchTrendMovie } from '../service/FetchMovieDB';
-
-export const HomeList = () => {
-  const [moviesList, setMoviesList] = useState([]);
-
-  useEffect(() => {
-    fetchResult();
-  }, []);
-  const fetchResult = async () => {
-    const result = await fetchTrendMovie();
-    setMoviesList(result);
-  };
-  // console.log(moviesList);
+export const HomeList = ({ moviesList }) => {
   return (
     <ul>
       {moviesList &&
@@ -26,4 +15,7 @@ export const HomeList = () => {
         ))}
     </ul>
   );
+};
+HomeList.propTypes = {
+  moviesList: PropTypes.array,
 };

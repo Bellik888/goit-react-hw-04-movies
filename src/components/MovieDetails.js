@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const MovieDetails = ({ movieDetails }) => {
   return (
     movieDetails && (
@@ -5,6 +7,7 @@ export const MovieDetails = ({ movieDetails }) => {
         <img
           src={`https://image.tmdb.org/t/p/w500/${movieDetails.poster_path}`}
           alt={movieDetails.original_title}
+          width={300}
         />
         <div>
           <h1>{movieDetails.original_title}</h1> ({movieDetails.release_date})
@@ -12,13 +15,16 @@ export const MovieDetails = ({ movieDetails }) => {
           <h2>Overview</h2>
           <p>{movieDetails.overview}</p>
           <h2>Genres</h2>
-          <ul>
+          {/* <ul>
             {movieDetails.genres.map(movie => (
               <li key={movie.id}>{movie.name}</li>
             ))}
-          </ul>
+          </ul> */}
         </div>
       </div>
     )
   );
+};
+MovieDetails.propTypes = {
+  movieDetails: PropTypes.array,
 };
