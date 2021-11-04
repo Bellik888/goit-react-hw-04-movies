@@ -15,16 +15,16 @@ export const MovieDetails = ({ movieDetails }) => {
           <h2>Overview</h2>
           <p>{movieDetails.overview}</p>
           <h2>Genres</h2>
-          {/* <ul>
+          <ul>
             {movieDetails.genres.map(movie => (
               <li key={movie.id}>{movie.name}</li>
             ))}
-          </ul> */}
+          </ul>
         </div>
       </div>
     )
   );
 };
 MovieDetails.propTypes = {
-  movieDetails: PropTypes.array,
+  movieDetails: PropTypes.object,
 };

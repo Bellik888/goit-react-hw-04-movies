@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import { useEffect } from 'react';
 import { useState } from 'react/cjs/react.development';
-import { fetchReviewsMovie } from '../service/FetchMovieDB';
+import { fetchReviewsMovie } from '../../service/FetchMovieDB';
 
 export const Reviews = ({ movieId }) => {
   const [reviews, setReviews] = useState(null);
@@ -31,5 +31,5 @@ export const Reviews = ({ movieId }) => {
   );
 };
 Reviews.propTypes = {
-  movieId: PropTypes.number,
+  movieId: PropTypes.string,
 };

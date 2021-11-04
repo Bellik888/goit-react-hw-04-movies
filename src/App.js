@@ -1,15 +1,23 @@
 import './App.css';
 import { Switch, Route } from 'react-router';
-import { Suspense } from 'react';
+import { Suspense, lazy } from 'react';
 
-import { Navigation } from './views/Navigation';
-import { HomePage } from './views/HomePage';
-import { MovieDetailsPage } from './views/MovieDetailsPage';
-import { MoviesPage } from './views/MoviesPage';
+import { Navigation } from './views/Navigation/Navigation';
+// import { HomePage } from './views/HomePage/HomePage';
+// import { MovieDetailsPage } from './views/MovieDetailsPage/MovieDetailsPage';
+// import { MoviesPage } from './views/MoviesPage/MoviesPage';
 
-// const HomePage = lazy(() => import('./views/HomePage'));
-// const MovieDetailsPage = lazy(() => import('./views/MovieDetailsPage' /* webpackChunkName: "movie-details-page" */));
-// const MoviesPage = lazy(() => import('./views/MoviesPage' /* webpackChunkName: "movies-page" */));
+const HomePage = lazy(() =>
+  import('./views/HomePage/HomePage' /* webpackChunkName: "home-page" */),
+);
+const MovieDetailsPage = lazy(() =>
+  import(
+    './views/MovieDetailsPage/MovieDetailsPage' /* webpackChunkName: "movie-details-page" */
+  ),
+);
+const MoviesPage = lazy(() =>
+  import('./views/MoviesPage/MoviesPage' /* webpackChunkName: "movies-page" */),
+);
 
 function App() {
   return (

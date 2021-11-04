@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useParams, Route, useRouteMatch } from 'react-router';
-import { fetchDetailsMovie } from '../service/FetchMovieDB';
+import { fetchDetailsMovie } from '../../service/FetchMovieDB';
 
-import { MovieDetails } from '../components/MovieDetails';
-import { AddInfoDetails } from '../components/AddInfoDetails';
-import { Cast } from './Cast';
-import { Reviews } from './Reviews';
+import { MovieDetails } from '../../components/MovieDetails/MovieDetails';
+import { AddInfoDetails } from '../../components/AddInfoDetails/AddInfoDetails';
+import { Cast } from '../Cast/Cast';
+import { Reviews } from '../Reviews/Reviews';
 
-export const MovieDetailsPage = () => {
+const MovieDetailsPage = () => {
   const [movieDetails, setMovieDetails] = useState(null);
   const { movieId } = useParams();
   const { url } = useRouteMatch();
@@ -39,4 +39,4 @@ export const MovieDetailsPage = () => {
   );
 };
 
-// const ImgUrl = 'https://image.tmdb.org/t/p/w500';
+export default MovieDetailsPage;

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import { useState, useEffect } from 'react';
 
-import { fetchCastMovie } from '../service/FetchMovieDB';
+import { fetchCastMovie } from '../../service/FetchMovieDB';
 
 export const Cast = ({ movieId }) => {
   const [castList, setCastList] = useState(null);
@@ -40,5 +40,5 @@ export const Cast = ({ movieId }) => {
 };
 
 Cast.propTypes = {
-  movieId: PropTypes.number,
+  movieId: PropTypes.string,
 };

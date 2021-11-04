@@ -13,5 +13,5 @@ export const AddInfoDetails = ({ movieId }) => {
   );
 };
 AddInfoDetails.propTypes = {
-  movieId: PropTypes.number,
+  movieId: PropTypes.string,
 };

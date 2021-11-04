@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import { HomeList } from '../components/HomeList';
-import { fetchTrendMovie } from '../service/FetchMovieDB';
+import { HomeList } from '../../components/HomeList/HomeList';
+import { fetchTrendMovie } from '../../service/FetchMovieDB';
 
-export const HomePage = () => {
+const HomePage = () => {
   const [moviesList, setMoviesList] = useState([]);
 
   useEffect(() => {
@@ -16,3 +16,4 @@ export const HomePage = () => {
 
   return <HomeList moviesList={moviesList} />;
 };
+export default HomePage;
