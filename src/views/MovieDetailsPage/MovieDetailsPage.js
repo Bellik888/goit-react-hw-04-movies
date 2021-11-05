@@ -5,7 +5,7 @@ import { fetchDetailsMovie } from '../../service/FetchMovieDB';
 import { MovieDetails } from '../../components/MovieDetails/MovieDetails';
 import { AddInfoDetails } from '../../components/AddInfoDetails/AddInfoDetails';
 import { Cast } from '../Cast/Cast';
-import { Reviews } from '../Reviews/Reviews';
+import { Reviews } from '../ReviewsPage/Reviews';
 
 const MovieDetailsPage = () => {
   const [movieDetails, setMovieDetails] = useState(null);

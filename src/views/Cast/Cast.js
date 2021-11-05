@@ -13,8 +13,12 @@ export const Cast = ({ movieId }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const fetchResult = async () => {
-    const result = await fetchCastMovie(movieId);
-    setCastList(result);
+    try {
+      const result = await fetchCastMovie(movieId);
+      setCastList(result);
+    } catch (err) {
+      console.log(err);
+    }
   };
   //   console.log(castList);
 
