@@ -13,6 +13,7 @@ const HomePage = () => {
     const result = await fetchTrendMovie();
     setMoviesList(result);
   };
+  console.log(moviesList);
 
   return <HomeList moviesList={moviesList} title={'TOP 20 MOVIES'} />;
 };
