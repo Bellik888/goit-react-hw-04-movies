@@ -1,0 +1,23 @@
+.title {
+  padding: 15px;
+  padding-left: 30px;
+  margin: 0;
+}
+.list {
+  padding: 0;
+  padding-bottom: 50px;
+  margin: 0;
+  list-style: none;
+  padding-left: 50px;
+}
+.link {
+  text-decoration: none;
+  color: rgb(87, 30, 4);
+  font-size: 20px;
+}
+.item {
+  padding: 10px;
+}
+.text {
+  margin: 0;
+}

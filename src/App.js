@@ -25,9 +25,8 @@ function App() {
       <header>
         <Navigation />
       </header>
-      <hr />
       <main>
-        <Suspense fallback={<h1>waiting...</h1>}>
+        <Suspense fallback={<h1>Loading...</h1>}>
           <Switch>
             <Route exact path="/">
               <HomePage />

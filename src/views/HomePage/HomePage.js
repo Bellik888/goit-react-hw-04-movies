@@ -14,6 +14,6 @@ const HomePage = () => {
     setMoviesList(result);
   };
 
-  return <HomeList moviesList={moviesList} />;
+  return <HomeList moviesList={moviesList} title={'TOP 20 MOVIES'} />;
 };
 export default HomePage;

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import s from './Reviews.module.css';
 
 import { useEffect } from 'react';
 import { useState } from 'react/cjs/react.development';
@@ -16,12 +17,12 @@ export const Reviews = ({ movieId }) => {
   };
   // console.log(reviews);
   return (
-    <ul>
+    <ul className={s.list}>
       {reviews && reviews.length > 0 ? (
         reviews.map(el => (
-          <li key={el.id}>
-            <h2>Author:{el.author}</h2>
-            <p>{el.content}</p>
+          <li key={el.id} className={s.item}>
+            <h2 className={s.author}>Author:{el.author}</h2>
+            <p className={s.content}>{el.content}</p>
           </li>
         ))
       ) : (

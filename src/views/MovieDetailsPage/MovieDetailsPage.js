@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Route, useRouteMatch } from 'react-router';
-import { fetchDetailsMovie } from '../../service/FetchMovieDB';
 
+import { fetchDetailsMovie } from '../../service/FetchMovieDB';
 import { MovieDetails } from '../../components/MovieDetails/MovieDetails';
 import { AddInfoDetails } from '../../components/AddInfoDetails/AddInfoDetails';
 import { Cast } from '../Cast/Cast';
@@ -26,9 +26,7 @@ const MovieDetailsPage = () => {
   return (
     <>
       <MovieDetails movieDetails={movieDetails} />
-      <hr />
-      <AddInfoDetails movieId={movieId} />
-      <hr />
+      <AddInfoDetails movieId={movieId} title={'Additional information'} />
       <Route exact path={`${url}/cast`}>
         <Cast movieId={movieId} />
       </Route>

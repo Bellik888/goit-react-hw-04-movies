@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 
 import { fetchCastMovie } from '../../service/FetchMovieDB';
+import s from './Cast.module.css';
 
 export const Cast = ({ movieId }) => {
   const [castList, setCastList] = useState(null);
@@ -18,10 +19,10 @@ export const Cast = ({ movieId }) => {
   //   console.log(castList);
 
   return (
-    <ul>
+    <ul className={s.list}>
       {castList &&
         castList.cast.map(el => (
-          <li key={el.id}>
+          <li key={el.id} className={s.item}>
             <img
               src={
                 el.profile_path
@@ -30,9 +31,12 @@ export const Cast = ({ movieId }) => {
               }
               alt={el.name}
               width={150}
+              className={s.img}
             />
-            <p>{el.name}</p>
-            <p>Character: {el.character}</p>
+            <h4 className={s.name}>{el.name}</h4>
+            {el.character && (
+              <p className={s.character}>Character: {el.character}</p>
+            )}
           </li>
         ))}
     </ul>
