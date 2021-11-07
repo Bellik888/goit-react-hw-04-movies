@@ -18,6 +18,7 @@ export const Navigation = () => {
         </li>
         <li className={s.item}>
           <NavLink
+            exact
             to="/movies"
             className={s.link}
             activeClassName={s.activeLink}

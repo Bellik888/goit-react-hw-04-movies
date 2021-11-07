@@ -1,23 +1,35 @@
 import { useEffect, useState } from 'react';
+import { useHistory, useLocation } from 'react-router';
 import { Form } from '../../components/Form/Form';
+import queryString from 'query-string';
 
 import { fetchSearchMovie } from '../../service/FetchMovieDB';
-import { HomeList } from '../../components/HomeList/HomeList';
+// import { HomeList } from '../../components/HomeList/HomeList';
+import { MoviesList } from '../../components/MoviesList/MoviesList';
 
 const MoviesPage = () => {
-  const [query, setQuery] = useState('');
+  const history = useHistory();
+  const location = useLocation();
+  const { query } = queryString.parse(location.search);
+  const [searchQuery, setSearchQuery] = useState('');
   const [result, setResult] = useState(null);
 
   useEffect(() => {
-    if (query === '') {
+    if (searchQuery === '') {
       return;
     }
     resultFetch();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [query]);
+  }, [searchQuery]);
 
   const handleChangeQuery = e => {
-    setQuery(e);
+    setSearchQuery(e);
+    history.push({
+      ...location,
+      search: `query=${e}`,
+    });
+    // console.log(history);
+    // console.log(location);
   };
 
   const resultFetch = async () => {
@@ -31,7 +43,7 @@ const MoviesPage = () => {
     <div>
       <Form handleChangeQuery={handleChangeQuery} />
       {/* <MovieDetails movieDetails={result}/> */}
-      <HomeList moviesList={result} />
+      <MoviesList moviesList={result} location={location} />
     </div>
   );
 };

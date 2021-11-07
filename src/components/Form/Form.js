@@ -13,7 +13,12 @@ export const Form = ({ handleChangeQuery }) => {
   const handleSubmit = e => {
     e.preventDefault();
     handleChangeQuery(inputSearch);
+    // resetForm();
   };
+  // const resetForm = (e) => {
+  //   setInputSearch('')
+  //   console.log(e.currentTarget);
+  // }
   // console.log(inputSearch);
 
   return (

@@ -1,12 +1,11 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
-import s from './HomeList.module.css';
+import s from './MoviesList.module.css';
 
-export const HomeList = ({ moviesList, title, location }) => {
+export const MoviesList = ({ moviesList, location }) => {
   return (
     <>
-      {title && <h1 className={s.title}>{title}</h1>}
       <ul className={s.list}>
         {moviesList &&
           moviesList.map(({ id, original_title, poster_path }) => (
@@ -34,7 +33,4 @@ export const HomeList = ({ moviesList, title, location }) => {
       </ul>
     </>
   );
-};
-HomeList.propTypes = {
-  moviesList: PropTypes.array,
 };
