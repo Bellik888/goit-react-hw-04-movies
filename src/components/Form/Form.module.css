@@ -10,6 +10,7 @@
   border: 1px solid;
   padding: 5px;
   padding-left: 10px;
+  background-color: transparent;
 }
 .btn {
   height: 40px;
@@ -18,4 +19,5 @@
   border: 1px solid;
   border-left: none;
   cursor: pointer;
+  background-color: transparent;
 }

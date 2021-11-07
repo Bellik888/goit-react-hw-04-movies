@@ -22,7 +22,11 @@ export const AddInfoDetails = ({ movieId, title, location, url }) => {
         </li>
         <li className={s.item}>
           <NavLink
-            to={`/movies/${movieId}/reviews`}
+            // to={`/movies/${movieId}/reviews`}
+            to={{
+              pathname: `${url}/reviews`,
+              state: { ...location.state },
+            }}
             className={s.link}
             activeClassName={s.activeLink}
           >

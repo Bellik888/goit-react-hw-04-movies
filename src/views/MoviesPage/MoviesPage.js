@@ -11,7 +11,7 @@ const MoviesPage = () => {
   const history = useHistory();
   const location = useLocation();
   const { query } = queryString.parse(location.search);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState(query || '');
   const [result, setResult] = useState(null);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const MoviesPage = () => {
       search: `query=${e}`,
     });
     // console.log(history);
-    // console.log(location);
+    console.log(location);
   };
 
   const resultFetch = async () => {
